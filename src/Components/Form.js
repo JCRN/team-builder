@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-import App from '../App'
+import { memberExpression } from "@babel/types";
 
-export default function Form() {
+
+export default function Form(props) {
   // Use an object to track multiple fields:
   const [member, setMember] = useState({ name: "", email: "", role: "" });
  
-  function handleChange(event) {
-    
-    const updatedUser = { ...member, [event.target.name]: event.target.value };
-    setMember(updatedUser);
+  function handleChange(event) {    
+    const updatedMember = { ...member, [event.target.name]: event.target.value };
+    setMember(updatedMember);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    return <App memberData={member} />    
+    saveMember(member);
+  }
+
+  const saveMember = () => {
+      props.setMembers([...props.members, member])
+    // const addToMembers = props.addToMembers
+    // addToMembers(member)
   }
 
   return (
@@ -21,14 +27,14 @@ export default function Form() {
       <fieldset>
         <legend>Team Member Entry</legend>
         <div className="form-group row">
-          <label for="memberName" className="form-label member-name">
-            Name
-            <div className="input-wrapper member-name">
+          <label for="name" className="form-label name">
+            Member Name
+            <div className="input-wrapper name">
               <input
                 type="text"
                 className="form-control"
-                name="memberName"
-                placeholder="Enter team member name"
+                name="name"
+                placeholder="Enter member name"
                 value={member.username}
                 onChange={handleChange}
               />
@@ -36,29 +42,29 @@ export default function Form() {
           </label>
         </div>
         <div className="form-group">
-          <label for="memberEmail">Email address</label>
+          <label for="email">Email address</label>
           <div className="input-wrapper email">
           <input
             type="email"
             className="form-control"
-            name="memberEmail"
+            name="email"
             aria-describedby="emailHelp"
-            placeholder="Enter team member email"
+            placeholder="Enter member email"
             value={member.email}
             onChange={handleChange}
           />
           </div>
         </div>
         <div className="form-group">
-          <label for="memberRole">Role</label>
+          <label for="role">Member Role</label>
           <div className="input-wrapper role">
           <input
-            type="password"
+            type="text"
             className="form-control"
-            name="password"
-            placeholder="Password"
+            name="role"
+            placeholder="role"
             onChange={handleChange}
-            value={member.password}
+            value={member.role}
           />
           </div>
         </div>
