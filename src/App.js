@@ -6,20 +6,18 @@ import Form from './Components/Form'
 
 function App() {
   const [members, setMembers] = useState([])
+  const [memberToEdit, setMemberToEdit] = useState([])
 
-  // const addToMembers = member => {
-  //   setMembers([...members, member])
-  // }
-  
   return (
     <div className="App">
-      <Form members={members} setMembers={setMembers}     />   
-      {members.map(member => (
-        <div>
-          {member.name} 
-          {member.email} 
-          {member.role}
-        </div>
+      <Form members={members} setMembers={setMembers} memberToEdit={memberToEdit} />   
+      {members.map((member, index) => (
+        <>
+        <div className="member-name">{member.name}</div>
+        <div className="member-email">{member.email}</div>
+        <div className="member-role">{member.role}</div>
+        <button className="edit-btn" onClick={() => setMemberToEdit(member)}>edit</button>
+        </>
       ))}
     </div>
   );
