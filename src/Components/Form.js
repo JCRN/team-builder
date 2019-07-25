@@ -26,7 +26,7 @@ export default function Form(props) {
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>Team Member Entry</legend>
+        <legend>TEAM MEMBER ENRY FORM</legend>
         <div className="form-group name">
           <label for="name" className="form-label name">
             Member Name
