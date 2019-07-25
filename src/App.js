@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import './App.css';
 
 // import components
 import Form from './Components/Form' 

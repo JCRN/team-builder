@@ -1,0 +1,44 @@
+form {
+    display: flex;
+    justify-content: center;
+    height: auto;
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 50px 0 0 50px;
+        width: 50%;
+        border: 1px solid black;
+    
+        legend {
+            width: auto;
+            color: crimson; 
+            margin-bottom: 25px;          
+        } 
+
+        label {
+            margin-left: 15px;
+        }
+
+        input {
+            align-self: center;
+            width: 90%;
+            padding: 12px 20px;
+            margin: 5px 0 20px 15px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }    
+        
+        button {
+            align-self: center;
+            width: 50%;
+            padding: 12px 20px;
+            margin: 5px 0 20px 15px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    }
+}
+
+

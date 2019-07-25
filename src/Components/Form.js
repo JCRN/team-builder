@@ -26,16 +26,16 @@ export default function Form(props) {
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>TEAM MEMBER ENRY FORM</legend>
+        <legend>TEAM MEMBER ENTRY FORM</legend>
         <div className="form-group name">
           <label for="name" className="form-label name">
-            Member Name
+            Name
             <div className="input-wrapper name">
               <input
                 type="text"
                 className="form-control"
                 name="name"
-                placeholder="Enter member name"
+                placeholder="Enter Member Name"
                 value={member.name}
                 onChange={handleChange}
               />
@@ -43,33 +43,33 @@ export default function Form(props) {
           </label>
         </div>
         <div className="form-group email">
-          <label for="email">Email address</label>
+          <label for="email">Email</label>
           <div className="input-wrapper email">
           <input
             type="email"
             className="form-control"
             name="email"
             aria-describedby="emailHelp"
-            placeholder="Enter member email"
+            placeholder="Enter Member Email"
             value={member.email}
             onChange={handleChange}
           />
           </div>
         </div>
         <div className="form-group role">
-          <label for="role">Member Role</label>
+          <label for="role">Role</label>
           <div className="input-wrapper role">
           <input
             type="text"
             className="form-control"
             name="role"
-            placeholder="role"
+            placeholder="Enter Member Role"
             onChange={handleChange}
             value={member.role}
           />
           </div>
         </div>
-        <button type="submit" className="btn">
+        <button type="submit" className="form-btn">
           Submit
         </button>
       </fieldset>
